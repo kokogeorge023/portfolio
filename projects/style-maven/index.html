@@ -1,35 +1,152 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Style Maven - Fashion Brand | Designed by Kyrillos George</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Courier New',monospace;background:#0a0a0a;color:#fff;overflow-x:hidden}
-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 60px;position:fixed;width:100%;z-index:100;background:rgba(10,10,10,0.9);backdrop-filter:blur(10px)}
-.logo{font-size:1.2rem;font-weight:700;letter-spacing:4px;text-transform:uppercase}
-.nav-links{display:flex;gap:32px;list-style:none;font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
-.nav-links a{color:#888;text-decoration:none;transition:.3s}.nav-links a:hover{color:#b8ff57}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 60px;background:linear-gradient(135deg,#0a0a0a,#111)}
-.hero-text{padding-right:40px}.hero-title{font-size:6rem;font-weight:900;line-height:.9;letter-spacing:-2px;margin-bottom:32px}
-.hero-title span{color:#b8ff57;display:block;font-style:italic}
-.hero-desc{color:#666;font-size:.9rem;line-height:1.8;margin-bottom:32px}
-.cta-btn{padding:14px 32px;background:transparent;border:1px solid #b8ff57;color:#b8ff57;font-size:.85rem;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:.3s}
-.cta-btn:hover{background:#b8ff57;color:#000}
-.hero-visual{height:70vh;background:linear-gradient(135deg,#1a1a1a,#222);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:10rem}
-.collections{padding:100px 60px;background:#0a0a0a}
-.collections h2{font-size:2.5rem;margin-bottom:48px;letter-spacing:-1px}
-.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.collection-card{aspect-ratio:3/4;background:linear-gradient(180deg,#1a1a1a,#111);border-radius:16px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;transition:.3s;cursor:pointer;position:relative;overflow:hidden;font-size:6rem;text-align:center}
-.collection-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(184,255,87,0.1)}
-.collection-card h3{font-size:1.2rem;font-weight:700;margin-top:auto}
-.collection-card p{font-size:.8rem;color:#666}
-footer{padding:40px 60px;border-top:1px solid #1a1a1a;text-align:center;color:#444;font-size:.8rem}
-.back-link{position:fixed;bottom:24px;right:24px;padding:12px 24px;background:#6c63ff;color:#fff;border-radius:100px;font-size:.85rem;font-weight:600;text-decoration:none;z-index:100;transition:.3s}.back-link:hover{transform:scale(1.05)}
-@media(max-width:768px){.hero{grid-template-columns:1fr;padding:100px 24px}.hero-title{font-size:3rem}.collection-grid{grid-template-columns:1fr}}
-</style></head><body>
-<nav><div class="logo">SM</div><ul class="nav-links"><li><a href="#">About us</a></li><li><a href="#">Collection</a></li><li><a href="#">Create</a></li></ul></nav>
-<section class="hero"><div class="hero-text"><h1 class="hero-title">STYLE<span>MAVEN</span></h1><p class="hero-desc">Dolor sit amet consectetur. Vitae mauris vivamus senectus fusce semper aliquet. Lectus aene.</p><button class="cta-btn">Watch Demo →</button></div><div class="hero-visual">🧥</div></section>
-<section class="collections"><h2>Collections</h2><div class="collection-grid">
-<div class="collection-card">👗<h3>Summer '26</h3><p>12 pieces</p></div>
-<div class="collection-card">🧥<h3>Winter Edge</h3><p>18 pieces</p></div>
-<div class="collection-card">👔<h3>Urban Pro</h3><p>15 pieces</p></div>
-</div></section>
-<footer>&copy; 2026 Style Maven - UI Design by Kyrillos George</footer>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#c8e6c0;min-height:100vh;overflow-x:hidden}
+
+/* Main container - card style */
+.page-wrapper{max-width:1200px;margin:40px auto;background:#0a0a0a;border-radius:16px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.3);position:relative}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;position:relative;z-index:10}
+.nav-logo{font-family:'Orbitron',monospace;font-size:1rem;color:#666;font-weight:700;letter-spacing:4px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:#888;text-decoration:none;font-size:.82rem;letter-spacing:1px;transition:.3s}
+.nav-links a:hover{color:#b8ff57}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:50% 50%;min-height:600px;position:relative}
+.hero-text{padding:40px 60px 60px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.hero-title{font-family:'Orbitron',monospace;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;color:#fff;line-height:.95;letter-spacing:2px;margin-bottom:32px;text-shadow:0 0 60px rgba(184,255,87,0.15)}
+.hero-title span{display:block}
+.hero-desc{color:#666;font-size:.88rem;line-height:1.8;max-width:400px;margin-bottom:32px}
+.watch-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border:1px solid #888;color:#fff;background:transparent;border-radius:100px;font-size:.82rem;cursor:pointer;transition:.3s;width:fit-content;font-family:'Inter',sans-serif}
+.watch-btn:hover{border-color:#b8ff57;color:#b8ff57}
+.scroll-indicator{position:absolute;bottom:30px;right:40px;writing-mode:vertical-rl;color:#555;font-size:.72rem;letter-spacing:3px;z-index:5}
+
+/* Hero image - grid overlay */
+.hero-visual{position:relative;overflow:hidden}
+.hero-visual-bg{width:100%;height:100%;object-fit:cover;display:block}
+.grid-overlay{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:1px;pointer-events:none;z-index:1}
+.grid-cell{border:1px solid rgba(255,255,255,0.08);transition:background .5s}
+.model-display{width:100%;height:100%;background:linear-gradient(135deg,#1a3a1a,#0a2a2a);display:flex;align-items:center;justify-content:center;position:relative}
+.model-placeholder{position:relative;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,40,20,0.8),rgba(0,60,40,0.6));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.model-placeholder::before{content:'';position:absolute;width:200%;height:200%;background:radial-gradient(circle at 60% 40%,rgba(184,255,87,0.15),transparent 60%);animation:glowMove 6s ease-in-out infinite}
+@keyframes glowMove{0%,100%{transform:translate(0,0)}50%{transform:translate(-20%,10%)}}
+.model-placeholder .face{font-size:12rem;filter:hue-rotate(80deg) saturate(1.5);opacity:.85;z-index:1}
+
+/* Grid lines animation */
+.grid-lines{position:absolute;inset:0;z-index:3;pointer-events:none}
+.grid-lines .h-line{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,0.06)}
+.grid-lines .v-line{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,0.06)}
+.grid-lines .h-line:nth-child(1){top:25%}.grid-lines .h-line:nth-child(2){top:50%}.grid-lines .h-line:nth-child(3){top:75%}
+.grid-lines .v-line:nth-child(4){left:25%}.grid-lines .v-line:nth-child(5){left:50%}.grid-lines .v-line:nth-child(6){left:75%}
+.dot{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);z-index:4}
+.dot:nth-child(7){top:25%;left:25%;animation:dotPulse 3s infinite}.dot:nth-child(8){top:50%;left:50%;animation:dotPulse 3s infinite .5s}.dot:nth-child(9){top:75%;left:75%;animation:dotPulse 3s infinite 1s}
+@keyframes dotPulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(2);opacity:.8}}
+
+/* Collections */
+.collections{padding:80px 60px;background:#0a0a0a}
+.collections h2{font-family:'Orbitron',monospace;font-size:1.8rem;color:#fff;margin-bottom:48px;letter-spacing:2px}
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.collection-card{aspect-ratio:3/4;background:linear-gradient(180deg,#1a1a1a,#111);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:.4s;cursor:pointer;position:relative;overflow:hidden}
+.collection-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#b8ff57;transform:scaleX(0);transition:.4s;transform-origin:left}
+.collection-card:hover::before{transform:scaleX(1)}
+.collection-card:hover{border-color:rgba(184,255,87,0.2);transform:translateY(-8px);box-shadow:0 20px 60px rgba(184,255,87,0.05)}
+.collection-card .emoji{font-size:5rem;margin-bottom:auto;filter:grayscale(0.3)}
+.collection-card h3{font-family:'Orbitron',monospace;font-size:.9rem;color:#fff;letter-spacing:1px}
+.collection-card .pieces{font-size:.75rem;color:#555}
+.collection-card .explore-tag{display:inline-block;padding:6px 12px;border:1px solid #333;border-radius:100px;font-size:.7rem;color:#888;margin-top:8px;transition:.3s}
+.collection-card:hover .explore-tag{border-color:#b8ff57;color:#b8ff57}
+
+/* About */
+.about-section{padding:80px 60px;background:#111;border-top:1px solid #1a1a1a}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-section h2{font-family:'Orbitron',monospace;font-size:2rem;color:#b8ff57;margin-bottom:16px;letter-spacing:2px}
+.about-section p{color:#555;font-size:.88rem;line-height:1.8}
+.stats-row{display:flex;gap:40px;margin-top:32px}
+.stat{text-align:center}
+.stat .num{font-family:'Orbitron',monospace;font-size:2rem;color:#b8ff57;font-weight:700}
+.stat .label{font-size:.72rem;color:#555;text-transform:uppercase;letter-spacing:2px}
+
+footer{padding:32px 40px;background:#0a0a0a;text-align:center;border-top:1px solid #1a1a1a}
+footer p{color:#333;font-size:.78rem}
+
+.back-link{position:fixed;bottom:24px;right:24px;padding:12px 24px;background:#6c63ff;color:#fff;border-radius:100px;font-size:.85rem;font-weight:600;text-decoration:none;z-index:100;transition:.3s;box-shadow:0 4px 20px rgba(108,99,255,.4)}
+.back-link:hover{transform:scale(1.05)}
+
+@media(max-width:968px){
+  .page-wrapper{margin:0;border-radius:0}
+  .hero{grid-template-columns:1fr}.hero-title{font-size:3rem}
+  .hero-visual{min-height:400px}.collection-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+  <nav>
+    <div class="nav-logo">SM</div>
+    <ul class="nav-links"><li><a href="#">About us</a></li><li><a href="#">Collection</a></li><li><a href="#">Create</a></li></ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-title"><span>STYLE</span><span>MAVEN</span></h1>
+      <p class="hero-desc">Dolor sit amet consectetur. Vitae mauris vivamus senectus fusce semper aliquet. Lectus aene.</p>
+      <button class="watch-btn">Watch Demo →</button>
+    </div>
+    <div class="hero-visual">
+      <div class="model-placeholder">
+        <div class="face">👩‍🎤</div>
+        <div class="grid-lines">
+          <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
+          <div class="v-line"></div><div class="v-line"></div><div class="v-line"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll down</div>
+  </section>
+
+  <section class="collections">
+    <h2>Collections</h2>
+    <div class="collection-grid">
+      <div class="collection-card">
+        <div class="emoji">👗</div>
+        <div><h3>Summer '26</h3><div class="pieces">12 pieces</div><span class="explore-tag">Explore →</span></div>
+      </div>
+      <div class="collection-card">
+        <div class="emoji">🧥</div>
+        <div><h3>Winter Edge</h3><div class="pieces">18 pieces</div><span class="explore-tag">Explore →</span></div>
+      </div>
+      <div class="collection-card">
+        <div class="emoji">🕶️</div>
+        <div><h3>Urban Pro</h3><div class="pieces">15 pieces</div><span class="explore-tag">Explore →</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-grid">
+      <div>
+        <h2>About SM</h2>
+        <p>Style Maven is a forward-thinking fashion house merging technology with high fashion. Our cyberpunk-inspired collections push the boundaries of wearable design while maintaining the elegance and craftsmanship expected from luxury brands.</p>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="num">200+</div><div class="label">Designs</div></div>
+        <div class="stat"><div class="num">50K</div><div class="label">Clients</div></div>
+        <div class="stat"><div class="num">15</div><div class="label">Awards</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2026 Style Maven — UI Design by Kyrillos George</p></footer>
+</div>
 <a href="https://kokogeorge023.github.io/portfolio/" class="back-link">← Back to Portfolio</a>
-</body></html>
+</body>
+</html>
