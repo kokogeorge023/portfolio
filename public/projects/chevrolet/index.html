@@ -1,32 +1,184 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Chevrolet Camaro | Designed by Kyrillos George</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');body{font-family:'Inter',sans-serif;overflow-x:hidden}
-body{background:#f58220;color:#000}
-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 60px;position:fixed;width:100%;z-index:100;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px)}
-.logo{font-size:1.3rem;font-weight:900;letter-spacing:2px;color:#fff}
-.nav-links{display:flex;gap:28px;list-style:none;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}
-.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;transition:.3s}.nav-links a:hover{color:#fff}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;padding:100px 24px}
-.hero-emoji{font-size:8rem;margin-bottom:24px;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.3));animation:bounce 3s ease-in-out infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-.hero-title{font-size:clamp(3rem,10vw,7rem);font-weight:900;line-height:.9;letter-spacing:-3px;margin-bottom:24px;color:#f58220}
-.hero-desc{max-width:500px;font-size:1rem;line-height:1.8;opacity:.7;margin-bottom:40px}
-.cta-btn{padding:16px 40px;background:#f58220;color:#000;border:none;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:1px;border-radius:100px;transition:.3s;text-transform:uppercase}
-.cta-btn:hover{transform:scale(1.05);box-shadow:0 10px 40px #f5822044}
-.cards{padding:80px 60px}
-.cards h2{font-size:2rem;text-align:center;margin-bottom:48px;color:#f58220}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
-.card{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;text-align:center;transition:.3s;cursor:pointer}
-.card:hover{transform:translateY(-8px);border-color:#f58220;box-shadow:0 20px 40px rgba(0,0,0,0.2)}
-.card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-.card p{font-size:1.2rem;font-weight:800;color:#f58220}
-footer{padding:40px 60px;text-align:center;opacity:.4;font-size:.8rem;border-top:1px solid rgba(255,255,255,0.1)}
-.back-link{position:fixed;bottom:24px;right:24px;padding:12px 24px;background:#6c63ff;color:#fff;border-radius:100px;font-size:.85rem;font-weight:600;text-decoration:none;z-index:100;transition:.3s}.back-link:hover{transform:scale(1.05);box-shadow:0 8px 30px rgba(108,99,255,0.4)}
-@media(max-width:768px){nav{padding:16px 24px}.card-grid{grid-template-columns:1fr}.cards{padding:60px 24px}}
-</style></head><body>
-<nav><div class="logo">CHEVROLET</div><ul class="nav-links"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Products</a></li><li><a href="#">Contact</a></li></ul></nav>
-<section class="hero"><div class="hero-emoji">🚗</div><h1 class="hero-title">CHEVROLET<br>CAMARO</h1><p class="hero-desc">Performance meets style. The iconic American muscle car redefined for the modern era.</p><button class="cta-btn">Explore More</button></section>
-<section class="cards"><h2>Featured</h2><div class="card-grid"><div class="card"><h3>Camaro ZL1</h3><p>$65,000</p></div><div class="card"><h3>Camaro SS</h3><p>$42,000</p></div><div class="card"><h3>Camaro LT</h3><p>$26,000</p></div></div></section>
-<footer>&copy; 2026 Chevrolet Camaro - UI Design by Kyrillos George</footer>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#2a2a2a;min-height:100vh;overflow-x:hidden}
+
+/* Card wrapper */
+.page-card{max-width:1300px;margin:30px auto;border-radius:16px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.5);position:relative;background:#3a3a3a}
+
+/* NAV */
+nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.nav-left{display:flex;align-items:center;gap:20px}
+.hamburger{font-size:1.2rem;color:#fff;cursor:pointer;opacity:.7;transition:.3s}
+.hamburger:hover{opacity:1}
+.search{font-size:1rem;color:#fff;cursor:pointer;opacity:.7}
+.nav-menu{display:flex;gap:24px;list-style:none}
+.nav-menu a{color:rgba(255,255,255,0.5);text-decoration:none;font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;transition:.3s}
+.nav-menu a:hover,.nav-menu a.active{color:#f5a623}
+.chevy-logo{font-size:2rem;color:#f5a623;filter:drop-shadow(0 0 10px rgba(245,166,35,0.3))}
+
+/* HERO - Diagonal split */
+.hero{min-height:650px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+
+/* Orange diagonal */
+.diagonal-bg{position:absolute;top:0;left:0;width:55%;height:100%;background:linear-gradient(135deg,#f5a623,#e8941a);clip-path:polygon(0 0,100% 0,70% 100%,0 100%);z-index:1}
+
+/* Dark right */
+.dark-bg{position:absolute;top:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,#3a3a3a,#2a2a2a);z-index:0}
+
+/* Content */
+.hero-content{position:relative;z-index:5;padding:0 60px 60px;width:100%}
+.hero-title{font-family:'Rajdhani',sans-serif;font-size:clamp(4rem,10vw,7rem);font-weight:700;color:#fff;line-height:.85;letter-spacing:4px;text-transform:uppercase;margin-bottom:4px;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.hero-subtitle{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:12px;text-transform:uppercase;margin-bottom:24px}
+.hero-desc{font-size:.78rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:2px;line-height:1.8;max-width:380px;margin-bottom:28px}
+.read-btn{display:inline-block;padding:14px 32px;background:rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.15);color:#fff;font-family:'Rajdhani',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:.3s}
+.read-btn:hover{background:#f5a623;color:#000;border-color:#f5a623}
+
+/* Car image */
+.car-display{position:absolute;right:40px;bottom:40px;z-index:10;width:55%;max-width:650px}
+.car-img{width:100%;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.4));animation:carSlide 1s ease forwards,carFloat 4s ease-in-out 1s infinite}
+@keyframes carSlide{from{transform:translateX(100px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes carFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Bottom stats */
+.hero-bottom{position:absolute;bottom:0;left:0;right:0;z-index:15;display:flex;justify-content:space-between;align-items:flex-end;padding:24px 60px}
+.slide-counter{font-family:'Rajdhani',sans-serif;font-size:2.5rem;font-weight:700;color:#fff}
+.slide-counter span{font-size:1rem;color:rgba(255,255,255,0.3)}
+.dots{display:flex;gap:8px;margin-bottom:8px}
+.dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);transition:.3s}
+.dots span.active{background:#f5a623;box-shadow:0 0 10px rgba(245,166,35,0.5)}
+
+/* Specs bar */
+.specs-bar{display:flex;gap:40px;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);padding:20px 40px;border-top:1px solid rgba(255,255,255,0.05)}
+.spec{text-align:center}
+.spec-label{font-family:'Rajdhani',sans-serif;font-size:.7rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:3px;margin-bottom:4px}
+.spec-value{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;color:#fff}
+.spec-value span{font-size:.8rem;color:#f5a623;font-weight:400}
+
+/* Models Section */
+.models-section{padding:80px 60px;background:#2a2a2a}
+.models-section h2{font-family:'Rajdhani',sans-serif;font-size:2rem;color:#fff;letter-spacing:4px;text-transform:uppercase;margin-bottom:48px}
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.model-card{background:#333;border-radius:12px;overflow:hidden;border:1px solid #3a3a3a;transition:.4s;cursor:pointer}
+.model-card:hover{transform:translateY(-8px);border-color:#f5a623;box-shadow:0 20px 60px rgba(245,166,35,0.1)}
+.model-img{aspect-ratio:16/10;background:linear-gradient(135deg,#3a3a3a,#2a2a2a);display:flex;align-items:center;justify-content:center;font-size:5rem;border-bottom:1px solid #3a3a3a;position:relative;overflow:hidden}
+.model-img::before{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(0deg,rgba(245,166,35,0.08),transparent)}
+.model-details{padding:20px}
+.model-details h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;color:#fff;letter-spacing:2px;margin-bottom:4px}
+.model-details .model-price{font-size:1.2rem;font-weight:700;color:#f5a623}
+.model-details .model-type{font-size:.78rem;color:#666;margin-top:4px}
+
+footer{padding:32px 60px;text-align:center;border-top:1px solid #333}
+footer p{color:#444;font-size:.78rem}
+
+.back-link{position:fixed;bottom:24px;right:24px;padding:12px 24px;background:#6c63ff;color:#fff;border-radius:100px;font-size:.85rem;font-weight:600;text-decoration:none;z-index:100;transition:.3s;box-shadow:0 4px 20px rgba(108,99,255,.4)}
+.back-link:hover{transform:scale(1.05)}
+
+@media(max-width:968px){
+  .page-card{margin:0;border-radius:0}
+  .hero{min-height:500px}.diagonal-bg{width:100%;clip-path:none}
+  .dark-bg{display:none}.car-display{position:relative;right:auto;bottom:auto;width:90%;margin:20px auto}
+  .hero-content{padding:120px 24px 24px}.hero-title{font-size:3rem}.hero-subtitle{font-size:1.5rem;letter-spacing:6px}
+  .specs-bar{flex-wrap:wrap;gap:20px;justify-content:center}
+  .models-grid{grid-template-columns:1fr}.models-section{padding:60px 24px}
+}
+</style>
+</head>
+<body>
+<div class="page-card">
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left"><span class="hamburger">☰</span><span class="search">🔍</span></div>
+    <ul class="nav-menu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Models</a></li>
+      <li><a href="#">Innovation</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="chevy-logo">⊕</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="diagonal-bg"></div>
+    <div class="dark-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">CHEVROLET</h1>
+      <div class="hero-subtitle">C A M A R O</div>
+      <p class="hero-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <button class="read-btn">READ MORE</button>
+    </div>
+    <div class="car-display">
+      <svg class="car-img" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="carGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f5a623"/><stop offset=".5" stop-color="#e8941a"/><stop offset="1" stop-color="#d4820f"/></linearGradient>
+          <radialGradient id="wheelGrad"><stop offset="0" stop-color="#555"/><stop offset=".5" stop-color="#333"/><stop offset="1" stop-color="#111"/></radialGradient>
+        </defs>
+        <ellipse cx="400" cy="310" rx="380" ry="15" fill="rgba(0,0,0,0.2)"/>
+        <!-- Body -->
+        <path d="M80 220 Q100 120 220 100 L400 80 Q550 75 620 100 Q700 120 740 180 L750 220 Q750 240 730 245 L90 245 Q70 242 80 220Z" fill="url(#carGrad)"/>
+        <!-- Roof -->
+        <path d="M220 105 Q240 55 350 45 L450 45 Q520 50 540 75 L550 100 L220 100Z" fill="url(#carGrad)" opacity=".9"/>
+        <!-- Windows -->
+        <path d="M235 100 Q250 62 345 52 L440 52 Q510 56 525 80 L530 98Z" fill="rgba(0,0,0,0.5)"/>
+        <line x1="380" y1="52" x2="375" y2="98" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+        <!-- Headlights -->
+        <rect x="710" y="170" width="40" height="15" rx="4" fill="#fff" opacity=".9"/>
+        <rect x="710" y="190" width="35" height="8" rx="3" fill="#4da6ff" opacity=".7"/>
+        <!-- Taillights -->
+        <rect x="80" y="180" width="20" height="30" rx="4" fill="#ff3333" opacity=".8"/>
+        <!-- Grille -->
+        <rect x="720" y="205" width="30" height="30" rx="4" fill="#222"/>
+        <line x1="725" y1="210" x2="745" y2="210" stroke="#444" stroke-width="1"/>
+        <line x1="725" y1="215" x2="745" y2="215" stroke="#444" stroke-width="1"/>
+        <line x1="725" y1="220" x2="745" y2="220" stroke="#444" stroke-width="1"/>
+        <!-- Black stripe -->
+        <path d="M500 85 L520 100 L600 100 L620 120 L650 180 L500 180 L480 100Z" fill="rgba(0,0,0,0.3)"/>
+        <!-- Wheels -->
+        <circle cx="220" cy="248" r="42" fill="url(#wheelGrad)" stroke="#222" stroke-width="3"/>
+        <circle cx="220" cy="248" r="28" fill="#444"/>
+        <circle cx="220" cy="248" r="15" fill="#666"/>
+        <circle cx="220" cy="248" r="5" fill="#888"/>
+        <g transform="translate(220,248)"><line x1="0" y1="-25" x2="0" y2="25" stroke="#555" stroke-width="2"/><line x1="-25" y1="0" x2="25" y2="0" stroke="#555" stroke-width="2"/><line x1="-18" y1="-18" x2="18" y2="18" stroke="#555" stroke-width="1.5"/><line x1="18" y1="-18" x2="-18" y2="18" stroke="#555" stroke-width="1.5"/></g>
+        <circle cx="620" cy="248" r="42" fill="url(#wheelGrad)" stroke="#222" stroke-width="3"/>
+        <circle cx="620" cy="248" r="28" fill="#444"/>
+        <circle cx="620" cy="248" r="15" fill="#666"/>
+        <circle cx="620" cy="248" r="5" fill="#888"/>
+        <g transform="translate(620,248)"><line x1="0" y1="-25" x2="0" y2="25" stroke="#555" stroke-width="2"/><line x1="-25" y1="0" x2="25" y2="0" stroke="#555" stroke-width="2"/><line x1="-18" y1="-18" x2="18" y2="18" stroke="#555" stroke-width="1.5"/><line x1="18" y1="-18" x2="-18" y2="18" stroke="#555" stroke-width="1.5"/></g>
+        <!-- Reflection -->
+        <path d="M120 140 Q300 120 700 155" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="hero-bottom">
+      <div><div class="slide-counter">05<span>/09</span></div><div class="dots"><span></span><span class="active"></span><span></span><span></span><span></span></div></div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <div class="specs-bar">
+    <div class="spec"><div class="spec-label">Power</div><div class="spec-value">2140<span>HP</span></div></div>
+    <div class="spec"><div class="spec-label">0-60 MPH</div><div class="spec-value">3.5<span>SEC</span></div></div>
+    <div class="spec"><div class="spec-label">¼ Mile</div><div class="spec-value">15<span>SEC</span></div></div>
+    <div class="spec"><div class="spec-label">Price</div><div class="spec-value">$8,300</div></div>
+  </div>
+
+  <!-- Models -->
+  <section class="models-section">
+    <h2>Models</h2>
+    <div class="models-grid">
+      <div class="model-card"><div class="model-img">🏎️</div><div class="model-details"><h3>Camaro ZL1</h3><div class="model-price">$65,000</div><div class="model-type">Supercharged V8</div></div></div>
+      <div class="model-card"><div class="model-img">🚗</div><div class="model-details"><h3>Camaro SS</h3><div class="model-price">$42,000</div><div class="model-type">6.2L V8</div></div></div>
+      <div class="model-card"><div class="model-img">🚙</div><div class="model-details"><h3>Camaro LT</h3><div class="model-price">$26,000</div><div class="model-type">2.0L Turbo</div></div></div>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2026 Chevrolet Camaro — UI Design by Kyrillos George</p></footer>
+</div>
 <a href="https://kokogeorge023.github.io/portfolio/" class="back-link">← Back to Portfolio</a>
-</body></html>
+</body>
+</html>
