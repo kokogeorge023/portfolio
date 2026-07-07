@@ -34,10 +34,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:24px 4
 .grid-overlay{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:1px;pointer-events:none;z-index:1}
 .grid-cell{border:1px solid rgba(255,255,255,0.08);transition:background .5s}
 .model-display{width:100%;height:100%;background:linear-gradient(135deg,#1a3a1a,#0a2a2a);display:flex;align-items:center;justify-content:center;position:relative}
-.model-placeholder{position:relative;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,40,20,0.8),rgba(0,60,40,0.6));display:flex;align-items:center;justify-content:center;overflow:hidden}
-.model-placeholder::before{content:'';position:absolute;width:200%;height:200%;background:radial-gradient(circle at 60% 40%,rgba(184,255,87,0.15),transparent 60%);animation:glowMove 6s ease-in-out infinite}
-@keyframes glowMove{0%,100%{transform:translate(0,0)}50%{transform:translate(-20%,10%)}}
-.model-placeholder .face{font-size:12rem;filter:hue-rotate(80deg) saturate(1.5);opacity:.85;z-index:1}
+.model-placeholder{position:relative;width:100%;height:100%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.model-img{width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .5s}
+.model-placeholder:hover .model-img{transform:scale(1.05)}
 
 /* Grid lines animation */
 .grid-lines{position:absolute;inset:0;z-index:3;pointer-events:none}
@@ -102,7 +101,7 @@ footer p{color:#333;font-size:.78rem}
     </div>
     <div class="hero-visual">
       <div class="model-placeholder">
-        <div class="face">👩‍🎤</div>
+        <img src="model.png" class="model-img" alt="Style Maven Model">
         <div class="grid-lines">
           <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
           <div class="v-line"></div><div class="v-line"></div><div class="v-line"></div>
