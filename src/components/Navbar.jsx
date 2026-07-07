@@ -42,7 +42,7 @@ export default function Navbar({ theme, toggleTheme }) {
             <i className={`fas fa-${theme === 'dark' ? 'sun' : 'moon'}`}></i>
           </button>
           <a className="nav-cta" onClick={() => scrollTo('contact')}>Let's Talk</a>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          <button className={`menu-toggle${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
             <span /><span /><span />
           </button>
         </div>

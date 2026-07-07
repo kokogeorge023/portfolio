@@ -40,8 +40,11 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .nav-cta:hover{background:var(--accent);color:#fff;box-shadow:0 0 30px var(--accent-glow)}
 .theme-toggle{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg-glass);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition);font-size:1.1rem;color:var(--text-secondary)}
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(30deg)}
-.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
-.menu-toggle span{width:24px;height:2px;background:var(--text-primary);transition:var(--transition)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px;z-index:1001}
+.menu-toggle span{width:24px;height:2px;background:var(--text-primary);transition:var(--transition);transform-origin:1px 1px}
+.menu-toggle.open span:nth-child(1){transform:rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0}
+.menu-toggle.open span:nth-child(3){transform:rotate(-45deg)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}

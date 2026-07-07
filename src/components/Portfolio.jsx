@@ -50,11 +50,11 @@ export default function Portfolio() {
         </div>
         <div className="portfolio-grid">
           {filtered.map((p, i) => (
-            <div key={p.slug} className={`project-card reveal ${i%3===1?'reveal-delay-1':i%3===2?'reveal-delay-2':''}`}>
+            <a key={p.slug} href={`${BASE}projects/${p.slug}/`} target="_blank" rel="noopener noreferrer" className={`project-card reveal ${i%3===1?'reveal-delay-1':i%3===2?'reveal-delay-2':''}`}>
               <div className="project-thumb">
                 <img src={`${BASE}assets/projects/${p.img}`} alt={p.title} loading="lazy" />
                 <div className="project-overlay">
-                  <a href={`${BASE}projects/${p.slug}/`} target="_blank" rel="noopener noreferrer">View Live</a>
+                  <span className="view-btn">View Live</span>
                 </div>
               </div>
               <div className="project-info">
@@ -62,7 +62,7 @@ export default function Portfolio() {
                 <p>{p.desc}</p>
                 <div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
