@@ -35,6 +35,26 @@ export default function Portfolio() {
   const filtered = filter === 'all' ? projects : projects.filter(p => p.cat === filter)
   const filters = [['all','All'],['web','Web Design'],['mobile','Mobile'],['dashboard','Dashboard']]
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const xc = rect.width / 2
+    const yc = rect.height / 2
+    const angle = 12
+    const rx = -(y - yc) / yc * angle
+    const ry = (x - xc) / xc * angle
+    card.style.setProperty('--rx', `${rx}deg`)
+    card.style.setProperty('--ry', `${ry}deg`)
+  }
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget
+    card.style.setProperty('--rx', '0deg')
+    card.style.setProperty('--ry', '0deg')
+  }
+
   return (
     <section id="portfolio">
       <div className="container">
@@ -50,7 +70,15 @@ export default function Portfolio() {
         </div>
         <div className="portfolio-grid">
           {filtered.map((p, i) => (
-            <a key={p.slug} href={`${BASE}projects/${p.slug}/`} target="_blank" rel="noopener noreferrer" className={`project-card reveal ${i%3===1?'reveal-delay-1':i%3===2?'reveal-delay-2':''}`}>
+            <a 
+              key={p.slug} 
+              href={`${BASE}projects/${p.slug}/`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={`project-card reveal ${i%3===1?'reveal-delay-1':i%3===2?'reveal-delay-2':''}`}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
               <div className="project-thumb">
                 <img src={`${BASE}assets/projects/${p.img}`} alt={p.title} loading="lazy" />
                 <div className="project-overlay">
