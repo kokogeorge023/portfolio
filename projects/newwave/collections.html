@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEWW(AI)VE | Digital Couture Collections</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .neon-glow-purple {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(218, 226, 253, 0.1);
+            color: transparent;
+        }
+
+        .gradient-pill {
+            background: linear-gradient(90deg, #b76dff 0%, #ffb0cd 100%);
+        }
+
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+
+        .glow-sphere {
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#131b2e",
+                      "background": "#0b1326",
+                      "on-secondary-fixed-variant": "#8c0053",
+                      "on-surface": "#dae2fd",
+                      "secondary": "#ffb0cd",
+                      "surface-container-lowest": "#060e20",
+                      "primary-fixed": "#f0dbff",
+                      "error": "#ffb4ab",
+                      "on-primary": "#490080",
+                      "tertiary-fixed": "#acedff",
+                      "outline-variant": "#4d4354",
+                      "surface-container-high": "#222a3d",
+                      "on-secondary-container": "#ffbad3",
+                      "on-primary-container": "#400071",
+                      "on-background": "#dae2fd",
+                      "surface-tint": "#ddb7ff",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "surface-bright": "#31394d",
+                      "on-primary-fixed": "#2c0051",
+                      "on-secondary": "#640039",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "outline": "#988d9f",
+                      "secondary-container": "#aa0266",
+                      "primary": "#ddb7ff",
+                      "primary-fixed-dim": "#ddb7ff",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#cfc2d6",
+                      "surface-container": "#171f33",
+                      "primary-container": "#b76dff",
+                      "surface-dim": "#0b1326",
+                      "secondary-fixed": "#ffd9e4",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#3e0022",
+                      "on-primary-fixed-variant": "#6900b3",
+                      "tertiary-container": "#009eb9",
+                      "inverse-surface": "#dae2fd",
+                      "secondary-fixed-dim": "#ffb0cd",
+                      "tertiary": "#4cd7f6",
+                      "on-tertiary-container": "#002f38",
+                      "inverse-primary": "#842bd2",
+                      "on-tertiary-fixed": "#001f26",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-highest": "#2d3449",
+                      "on-tertiary": "#003640",
+                      "surface-variant": "#2d3449",
+                      "surface": "#0b1326"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "24px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "display-outline": ["Sora"],
+                      "label-mono": ["Space Mono"],
+                      "headline-lg-mobile": ["Sora"],
+                      "body-lg": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Sora"],
+                      "headline-md": ["Sora"]
+              },
+              "fontSize": {
+                      "display-outline": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                      "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background selection:bg-primary selection:text-on-primary">
+<!-- Background Decoration -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="noise-bg absolute inset-0"></div>
+    <div class="glow-sphere absolute -top-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+    <div class="glow-sphere absolute top-1/2 -left-40 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[150px]"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
+    <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW(AI)VE</a>
+    <div class="hidden md:flex items-center gap-10">
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-mono text-label-mono transition-colors duration-300" href="collections.html">Collections</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="tech.html">Tech</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="editorial.html">Editorial</a>
+    </div>
+    <div class="flex items-center gap-6">
+        <button id="menu-btn" class="active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-on-surface text-2xl" data-icon="menu">menu</span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg flex flex-col justify-center items-center gap-8 transition-all duration-300 opacity-0 pointer-events-none">
+    <button id="close-menu" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-primary border-b border-primary/30 pb-2" href="collections.html">Collections</a>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="tech.html">Tech</a>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="editorial.html">Editorial</a>
+</div>
+
+<main class="relative z-10 pt-40 pb-20">
+    <!-- Hero Section & Title Overlay -->
+    <div class="px-6 md:px-margin-desktop mb-20 relative">
+        <h1 class="font-display-outline text-display-outline text-outline absolute -top-24 left-margin-desktop select-none pointer-events-none opacity-20 hidden lg:block">
+            SYSTEM_01
+        </h1>
+        <div class="max-w-3xl">
+            <p class="font-label-mono text-label-mono text-primary mb-4 tracking-widest text-xs md:text-sm">RELEASE 2024.B / DIGITAL COUTURE</p>
+            <h2 class="font-headline-lg text-3xl md:text-headline-lg text-on-surface leading-tight mb-6 uppercase">ARCHIVE: NEO-TECHNICAL LAYERS</h2>
+            <p class="font-body-lg text-base md:text-body-lg text-on-surface-variant">A fusion of hyper-realistic physics and cyberpunk aesthetics. Each piece is meticulously engineered for the virtual vanguard.</p>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+        <!-- Card 1 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic technical jacket with glowing neon purple seams and oversized utility straps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3N-4tqbOBlyaw9AhXPOjSDZwYERDUTEzHt6E16B2iqD0FI__3LtGNmgWVrG1RoGjSkSuq8PqKY1wwV33UInvVwPmcCsM_mbkhx12SaXqVKrLDXhZWnCf3Yf9bMUJkYeFI3yyon40yMNcnpSVJcNSUVP84x6aiDddyUR2w0wX8Pmc6HA4jbgX63NsTJ3XjCqIEMRuOndB8ILlqBENX1aUzB2ipkQeIU6VCmQOcMyAbvDXLGUtXq_a"/>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-label-mono font-label-mono border border-primary/30 backdrop-blur-md text-[10px]">NEW</span>
+                </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">VORTEX SHELL</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">0.45 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Adaptive thermal shielding with integrated HUD projection. Ultra-lightweight kinetic weave.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 gradient-pill text-on-primary font-bold rounded-full transition-all duration-300 hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 text-sm shadow-md">
+                        VIEW DETAILS
+                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up of a high-fashion tech-wear hood and face mask set in a deep obsidian black." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDV0V0tgxfoUUQgdMDnN5SSjnKGHkFxK8QT4nWxX8sM8_vvkBHxlirDw73k28bjuHmF1gvjwqRmIRDU6tISGIZgO6fhAl_qgdlmEUH3s0IMisWhLs5hm8MdYfxbsGOWbYuc_oS6HSege48SXEvqxBxxrxhJirv5j3I0zQW0grpsa3eSQGgJwe2BDVRrgNuQchX9batbupL_RIJDo7pr5Y9485RyZGon_XyfczOQpNXYNp5n9hpEGH"/>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-label-mono font-label-mono border border-secondary/30 backdrop-blur-md text-[10px]">RARE</span>
+                </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">GHOST COWL</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">0.28 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Multi-spectral cloaking mask with neural-link synchronization. Minimalist footprint.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 border border-outline-variant hover:border-primary/50 text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2 text-sm">
+                        VIEW DETAILS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A pair of futuristic exo-boots with illuminated sole units and translucent neon panels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8STT-l11BzH-TL5OvFmNHSzqughaF5yuydTk8B4mCSpC1g1TEnsVJfgAESoT3qqNUxaKnPdaxzFwcpzZ29bqF1UPCGj2PKU0hsFGVZN5AVUxvjXyxt1GV9YWLWL0OFSizLWotmMl1ZE60m09K6cCiOAgSmTOGJCN5fmViFarbVzEEw40OCoQxmrkwzaFt5VU7r6NHbNn8P5bixy0YBg7y8b6QNtiRRQ9YeEUPntvokZvttnk2eT4"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">STRIDER EXO</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">0.60 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Hydraulic-assisted traversal units with graphene-reinforced structure. Motion-responsive LEDs.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 border border-outline-variant hover:border-primary/50 text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2 text-sm">
+                        VIEW DETAILS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A full-length view of a sleek, asymmetrical cybernetic trench coat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_eWIzGN_rwQ226Z1B1mG77rUNDVbCL0tCBJrU7dFThHTMaVU3TeWpdmRvcyFPbJPg00CdTfNrUFpRz5BtrV3uo6UfhOvlQf4OnpORm-R7j1hBUzVZCIwQDvHqjH3DVRbwC6f-Cb0tuf2nb3u7Z4fxLdgEkpvs7x2O5iQGBwmQLkXGH-zp97CFjC0gMz1nmrS6iJ1HLbr5keyasbf25zy2jaWW7FJ9NlQGeCzyhuT0HDh_hMJbeHL5"/>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-label-mono font-label-mono border border-primary/30 backdrop-blur-md text-[10px]">LIMITED</span>
+                </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">LIQUID CLOAK</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">1.20 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Iridescent digital fabrication with real-time environment reflection shaders.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 border border-outline-variant hover:border-primary/50 text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2 text-sm">
+                        VIEW DETAILS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 (Bento Style Shift) -->
+        <div class="glass-card rounded-xl overflow-hidden md:col-span-2 lg:col-span-2 flex flex-col md:flex-row group border border-white/5">
+            <div class="relative md:w-1/2 h-[400px] md:h-full overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide cinematic shot of a group of models in a neon-lit cyber-alley." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsODhZQiot4SPRCAhBedzGpeVSn5W_zs4_datGgn_olOje7L_4r7nIzKgWUD-b4YTY20c2wE2mVWlg6wAStpqaSkL_gZFrvphsK7M-IR0ymQZAd8QEXz7Pza9BJpfMNoyrSuZTZ2KqHldjkTeYTpzp2Vau3JoPAtUx_6r5EHyv30V3vIcqB4zcCLDIvlMX3oQAv7WpJFaEip8SAOlGcEoVP9KwIoRgvoM7_uFQEFGQ-KFoAcp5wQBZ"/>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center md:w-1/2 bg-surface-container-low/50 backdrop-blur-md">
+                <div class="mb-6">
+                    <span class="font-label-mono text-label-mono text-tertiary text-xs">EXCLUSIVE DROP</span>
+                    <h3 class="font-headline-lg text-2xl md:text-headline-lg text-on-surface mt-2 font-bold uppercase">RAID PACK 01</h3>
+                </div>
+                <p class="font-body-lg text-sm md:text-base text-on-surface-variant mb-8">The complete urban traversal kit. Includes the Jacket, Hood, and strider units in a limited 'Void' colorway.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="px-8 py-4 gradient-pill text-on-primary font-bold rounded-full transition-all duration-300 hover:brightness-110 active:scale-95 text-sm shadow-md">BUNDLE NOW</button>
+                    <a href="tech.html" class="px-8 py-4 border border-outline-variant text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 flex items-center justify-center text-sm">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A technical utility vest with multiple glowing storage modules." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfzzyQ1C-I-ckBg_zhPAiQudDydp1PFYx0-iIoiGojgAC5Nw6kBZtQmHt-bscd01YjT6SeIcX-axvZPE_zSA9rnoz9Tj4u7ecAZG6kRAs7uE6RC3VN17w_kb4smccmv22arnKowVJ65WimfnXk0sZgZZmI8PEKqHd4C4LrfKls2Yf9iBuSmATRNawhfpuBCYbXmu5Pe5FdGdxyQDjx-qZQmINgMbeB9GuxvqEtPccd8e1KguShW8UP"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">CHRONOS VEST</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">0.32 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Modular cargo system with active stabilization. Compatible with all core shells.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 border border-outline-variant hover:border-primary/50 text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2 text-sm">
+                        VIEW DETAILS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="glass-card rounded-xl overflow-hidden flex flex-col group border border-white/5">
+            <div class="relative h-[400px] overflow-hidden">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A pair of technical gloves with glowing fingertips." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo8qgpD44r1EAHR7Hzbe8gyaWkxfcBhNWbdT2Hrninvrf3jNypmx7qLgSAsfOzlJqgJHpFdCsSFmEfVPMcvZ-TFmv5s6ffpPh5SK7KGrGL9TzieV07eRF0KR4AactVkLPH2z7FcTGIXp95qW9m9eOqSHgLMsiYXwiGR9VNxtlEwZoGLyjDbJQgqolhyBCTlRDQYEQnpxyXKDVmyHhQeH3Iv8esXor393rgw6PzXt12Xi2hipo9Bd1u"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow bg-surface-container-low/30 backdrop-blur-md">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-headline-md text-xl md:text-headline-md text-on-surface font-semibold">HAPTIC GRIP</h3>
+                    <span class="font-label-mono text-label-mono text-secondary text-sm">0.15 ETH</span>
+                </div>
+                <p class="font-body-md text-sm text-on-surface-variant mb-6 line-clamp-2">Neural-feedback gloves with sub-millimeter precision. Virtual interaction optimized.</p>
+                <div class="mt-auto">
+                    <a href="tech.html" class="w-full py-4 border border-outline-variant hover:border-primary/50 text-on-surface font-bold rounded-full transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2 text-sm">
+                        VIEW DETAILS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action / Footer Section -->
+    <div class="mt-32 px-6 md:px-margin-desktop text-center">
+        <div class="max-w-2xl mx-auto glass-card p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-primary/5 glow-sphere blur-3xl opacity-30"></div>
+            <div class="relative z-10 flex flex-col items-center">
+                <h2 class="font-headline-lg text-2xl md:text-headline-lg text-on-surface mb-4 font-bold uppercase">JOIN THE VANGUARD</h2>
+                <p class="font-body-lg text-sm md:text-base text-on-surface-variant mb-8 max-w-lg">Get notified about limited drops and exclusive digital collaborations.</p>
+                <form class="flex flex-col sm:flex-row gap-4 justify-center w-full" onsubmit="event.preventDefault(); alert('Subscribed.');">
+                    <input class="bg-surface-container-highest border border-white/10 text-on-surface font-label-mono text-xs px-6 py-4 rounded-full focus:outline-none focus:border-primary transition-colors min-w-[260px]" placeholder="ENTER_EMAIL_ADDR" type="email" required/>
+                    <button class="px-8 py-4 gradient-pill text-on-primary font-bold rounded-full shadow-lg neon-glow-purple hover:scale-105 transition-transform text-sm">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="w-full py-12 px-6 md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6 max-w-container-max mx-auto border-t border-white/5 bg-background/50 backdrop-blur-md relative z-10">
+    <div class="flex flex-col gap-2 items-center md:items-start">
+        <span class="text-body-lg font-headline-md font-bold text-on-surface tracking-wider">NEWW(AI)VE</span>
+        <span class="font-label-mono text-[10px] text-on-surface-variant/60 tracking-widest uppercase">Digital Couture Core</span>
+    </div>
+    <div class="flex gap-8">
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-mono text-[10px] tracking-widest uppercase" href="#">Privacy Policy</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-mono text-[10px] tracking-widest uppercase" href="#">Terms of Service</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-mono text-[10px] tracking-widest uppercase" href="#">Contact</a>
+    </div>
+    <div class="font-label-mono text-[10px] text-on-surface-variant/60 tracking-wider text-center md:text-right">
+        © 2026 NEWW(AI)VE DIGITAL COUTURE. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<!-- Back to Portfolio Floating Button -->
+<a href="https://kokogeorge023.github.io/portfolio/" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center gap-2 px-6 py-3 rounded-full glass-card border border-white/20 hover:border-primary hover:bg-white/5 hover:scale-105 active:scale-95 transition-all duration-300 text-on-surface hover:text-primary shadow-2xl group">
+    <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:-translate-x-1 font-bold">arrow_back</span>
+    <span class="font-label-mono text-xs uppercase tracking-wider">Back to Portfolio</span>
+</a>
+
+<script>
+    // Subtle micro-interaction for cards
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Mobile Menu Interaction
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    }
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        });
+    }
+</script>
+</body>
+</html>
