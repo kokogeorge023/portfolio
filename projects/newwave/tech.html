@@ -38,6 +38,12 @@
         .animate-pulse-slow {
             animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+        .logo-gradient {
+            background: linear-gradient(135deg, #b76dff, #ff6eb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -134,7 +140,7 @@
 <body class="bg-background text-on-surface">
 <!-- TOP NAVIGATION SHELL -->
 <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
-    <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW(AI)VE</a>
+    <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW<span class="logo-gradient">(AI)</span>VE</a>
     <div class="hidden md:flex items-center gap-10">
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="collections.html">Collections</a>
         <a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform font-label-mono text-label-mono" href="tech.html">Tech</a>
@@ -333,7 +339,7 @@
 <!-- FOOTER SHELL -->
 <footer class="w-full py-12 px-6 md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6 max-w-container-max mx-auto bg-surface-container-lowest border-t border-white/5 text-on-surface-variant">
     <div class="flex flex-col items-center md:items-start gap-2">
-        <div class="text-body-lg font-headline-md font-bold text-on-surface tracking-wider">NEWW(AI)VE</div>
+        <div class="text-body-lg font-headline-md font-bold text-on-surface tracking-wider">NEWW<span class="logo-gradient">(AI)</span>VE</div>
         <p class="text-label-mono font-label-mono text-on-surface-variant text-[10px] tracking-wide">© 2026 NEWW(AI)VE DIGITAL COUTURE. ALL RIGHTS RESERVED.</p>
     </div>
     <div class="flex gap-stack-lg font-label-mono text-label-mono text-[10px] tracking-widest uppercase">
