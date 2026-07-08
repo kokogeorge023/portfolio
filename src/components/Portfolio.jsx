@@ -4,7 +4,7 @@ const BASE = import.meta.env.BASE_URL
 
 const projects = [
   { title:"Nike Landing Page", desc:"Premium e-commerce landing page with bold typography.", img:"1.png", cat:"web", tags:["UI Design","E-Commerce"], slug:"nike" },
-  { title:"Style Maven", desc:"Dark-themed fashion brand website with futuristic aesthetic.", img:"2.png", cat:"web", tags:["Branding","Web Design"], slug:"style-maven" },
+  { title:"NEWW(AI)VE", desc:"High-tech digital couture landing page with glassmorphism and cyberpunk aesthetic.", img:"2.png", cat:"web", tags:["UI Design","Digital Art","Tailwind"], slug:"newwave" },
   { title:"Chevrolet Camaro", desc:"Automotive landing page with dynamic split-screen design.", img:"3.png", cat:"web", tags:["Automotive","UI Design"], slug:"chevrolet" },
   { title:"ZAZ 968M Retro", desc:"Minimalist automotive concept with illustration-based design.", img:"4.png", cat:"web", tags:["Illustration","Minimal"], slug:"zaz" },
   { title:"Sculptures Gallery", desc:"Dark luxury art gallery website with gold accents.", img:"5.png", cat:"web", tags:["Luxury","Art Gallery"], slug:"sculptures" },
