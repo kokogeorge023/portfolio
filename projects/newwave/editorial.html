@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Editorial | NEWW(AI)VE Digital Couture</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-border-gradient {
+            border-image: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent) 1;
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 10px rgba(221, 183, 255, 0.5);
+        }
+        .neon-glow-btn:hover {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            animation: scroll-text 20s linear infinite;
+        }
+        .pixel-grid {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-container-low": "#131b2e",
+                "background": "#0b1326",
+                "on-secondary-fixed-variant": "#8c0053",
+                "on-surface": "#dae2fd",
+                "secondary": "#ffb0cd",
+                "surface-container-lowest": "#060e20",
+                "primary-fixed": "#f0dbff",
+                "error": "#ffb4ab",
+                "on-primary": "#490080",
+                "tertiary-fixed": "#acedff",
+                "outline-variant": "#4d4354",
+                "surface-container-high": "#222a3d",
+                "inverse-on-surface": "#283044",
+                "on-secondary-container": "#ffbad3",
+                "on-primary-container": "#400071",
+                "on-background": "#dae2fd",
+                "surface-tint": "#ddb7ff",
+                "tertiary-fixed-dim": "#4cd7f6",
+                "surface-bright": "#31394d",
+                "on-primary-fixed": "#2c0051",
+                "on-secondary": "#640039",
+                "on-tertiary-fixed-variant": "#004e5c",
+                "outline": "#988d9f",
+                "secondary-container": "#aa0266",
+                "primary": "#ddb7ff",
+                "primary-fixed-dim": "#ddb7ff",
+                "error-container": "#93000a",
+                "on-surface-variant": "#cfc2d6",
+                "surface-container": "#171f33",
+                "primary-container": "#b76dff",
+                "surface-dim": "#0b1326",
+                "secondary-fixed": "#ffd9e4",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#3e0022",
+                "on-primary-fixed-variant": "#6900b3",
+                "tertiary-container": "#009eb9",
+                "inverse-surface": "#dae2fd",
+                "secondary-fixed-dim": "#ffb0cd",
+                "tertiary": "#4cd7f6",
+                "on-tertiary-container": "#002f38",
+                "inverse-primary": "#842bd2",
+                "on-tertiary-fixed": "#001f26",
+                "on-error-container": "#ffdad6",
+                "surface-container-highest": "#2d3449",
+                "on-tertiary": "#003640",
+                "surface-variant": "#2d3449",
+                "surface": "#0b1326"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "margin-mobile": "20px",
+                "margin-desktop": "64px",
+                "container-max": "1440px"
+              },
+              "fontFamily": {
+                "display-outline": ["Sora"],
+                "label-mono": ["Space Mono"],
+                "headline-lg-mobile": ["Sora"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Sora"],
+                "headline-md": ["Sora"]
+              },
+              "fontSize": {
+                "display-outline": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
+                "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background selection:bg-primary selection:text-on-primary">
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
+    <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW(AI)VE</a>
+    <nav class="hidden md:flex items-center gap-stack-lg">
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="index.html">Collections</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="tech.html">Tech</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300" href="editorial.html">Editorial</a>
+    </nav>
+    <div class="flex items-center gap-stack-md">
+        <button id="menu-btn" class="p-2 hover:bg-white/10 rounded-full transition-colors active:scale-95">
+            <span class="material-symbols-outlined text-on-surface">menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg flex flex-col justify-center items-center gap-8 transition-all duration-300 opacity-0 pointer-events-none">
+    <button id="close-menu" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="index.html">Collections</a>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="tech.html">Tech</a>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-primary border-b border-primary/30 pb-2" href="editorial.html">Editorial</a>
+</div>
+
+<main class="relative pt-32 min-h-screen pixel-grid">
+    <!-- Hero Editorial Section -->
+    <section class="px-margin-desktop mb-32">
+        <div class="grid grid-cols-12 gap-gutter">
+            <div class="col-span-12 md:col-span-8 relative group overflow-hidden h-[80vh]">
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-fashion photography of a model in technical neon-lit streetwear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbvOh5_6Dww3bh1_tMisotZSHXRvQM_KQS9Bkpkks9goKzOivRGRPjtBCgESU5qFO-zmVHnN1se_2j-BumteGYYF18uljMl7dXUe1l80leZmMXVbJlbRhQl_NBb5Kp41uPsz3V-LtIc_KCYXBTS6Vcnfm0G9WqUz0mJhPk_p9gAntUJjSmavA6i2b3FsTDv3soqAXCUOHdi-I0SLs8vEFPJ5pKcWzW9PiVtrLQHwLCR8NB5uftsNOA')">
+                </div>
+                <div class="absolute bottom-12 left-12 z-20 max-w-xl">
+                    <div class="flex gap-4 mb-4">
+                        <span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 font-label-mono text-label-mono uppercase tracking-widest rounded-full">Issue No. 042</span>
+                        <span class="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 font-label-mono text-label-mono uppercase tracking-widest rounded-full">New Era</span>
+                    </div>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface mb-6 leading-tight">NEON <span class="text-primary italic">SUTURES</span>: THE RISE OF DIGITAL FABRIC</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant/80 mb-8 max-w-lg">Exploring the intersection of generative AI, haptic feedback textiles, and the street-cultures of Neo-Tokyo.</p>
+                    <button class="flex items-center gap-4 bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full text-on-primary font-bold neon-glow-btn transition-all group">
+                        READ FULL STORY
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:flex md:col-span-4 flex-col gap-gutter">
+                <div class="glass-panel p-8 h-full flex flex-col justify-between border-t-2 border-white/20">
+                    <div>
+                        <span class="font-label-mono text-label-mono text-primary/60 uppercase block mb-4">Editorial Note</span>
+                        <h2 class="font-headline-md text-headline-md text-on-surface mb-4">Hyper-Physical Realities</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">In this edition, we dismantle the barrier between the avatar and the self. Technical fashion is no longer just protection; it's an interface.</p>
+                    </div>
+                    <div class="pt-8 border-t border-outline-variant/20">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full border border-primary/50 overflow-hidden">
+                                <img class="w-full h-full object-cover" data-alt="Close up portrait of a digital artist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Ne3KoeLwERYWXicu8StD10oobsOvG1DzT20FRwUaTPpyGCskaC0CuVKlJqvS8jqTBDA3vD7hYVa9hlZNhjD_NiamgztmOpQpDuW-n3yi37UpZOAELTRIEo7Qv9h35RzawFLg80mONGCCTnOzmuUo_OEKxXUUyyqQHW7WZ22QSk95_POxbDfBaPesRa9ZJcY8YM6gieD7fTcHaX7DhyH6yqNfqTQwYGZuei2nmyvsmwtci7H6-qGD"/>
+                            </div>
+                            <div>
+                                <p class="font-label-mono text-label-mono text-on-surface">DR. ELARA VEX</p>
+                                <p class="text-[10px] uppercase text-on-surface-variant tracking-tighter">Editor-in-Chief</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Scrolling Header -->
+    <div class="w-full py-12 border-y border-outline-variant/10 overflow-hidden mb-32">
+        <div class="animate-scroll whitespace-nowrap">
+            <span class="font-display-outline text-display-outline text-transparent stroke-text opacity-20 mx-12" style="-webkit-text-stroke: 1px #dae2fd;">FUTURE COUTURE</span>
+            <span class="font-display-outline text-display-outline text-transparent stroke-text opacity-20 mx-12" style="-webkit-text-stroke: 1px #dae2fd;">SYSTEMS 001</span>
+            <span class="font-display-outline text-display-outline text-transparent stroke-text opacity-20 mx-12" style="-webkit-text-stroke: 1px #dae2fd;">VIRTUAL SKIN</span>
+            <span class="font-display-outline text-display-outline text-transparent stroke-text opacity-20 mx-12" style="-webkit-text-stroke: 1px #dae2fd;">FUTURE COUTURE</span>
+        </div>
+    </div>
+
+    <!-- Bento Grid Articles -->
+    <section class="px-margin-desktop mb-32">
+        <div class="flex items-end justify-between mb-12">
+            <div>
+                <span class="font-label-mono text-label-mono text-secondary uppercase block mb-2">// CATEGORY: TECH_GEAR</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">LATEST DISPATCHES</h2>
+            </div>
+            <div class="hidden md:block">
+                <button class="px-6 py-3 border border-outline rounded-full font-label-mono text-label-mono hover:bg-white/5 transition-all">VIEW ALL ARTICLES</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Card 1 -->
+            <div class="glass-panel group relative rounded-xl overflow-hidden flex flex-col h-[600px] border-white/5">
+                <div class="h-1/2 overflow-hidden relative">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A macro shot of a futuristic fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYi1bKW2vh5MpQX_dugHiq1kVj7SkIZbCX9HiOdpG6a6r2k3asArJ-wwS92lGfINeJiACBAoB7QlolE117MWm2Vf47jO5oidfWlhttZVomoQ1r58zDmVF6B1P9o961Azc-WSGkNxsMkmxRKw_Uh7TD7UmeV3IMZMZ3YGOI5-vHQXKeaE4i3x4qxBAYQyjZFGIw5OSjNvnoC6d60Cx3YX9YuAkZqUWmKj5psghG8kgdmVrNFgOGl9Y2"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-black/80 backdrop-blur-md text-on-surface px-3 py-1 font-label-mono text-[10px]">ANALYSIS</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">THE HAPTIC WEAVE</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">How sensory feedback is changing the way we perceive touch in the metaverse and beyond.</p>
+                    </div>
+                    <a class="flex items-center gap-2 font-label-mono text-label-mono text-primary group-hover:gap-4 transition-all" href="#">
+                        EXPLORE DATA <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-panel group relative rounded-xl overflow-hidden flex flex-col h-[600px] border-white/5 md:mt-12">
+                <div class="h-1/2 overflow-hidden relative">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An artistic shot of a model wearing a translucent glass-like jacket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAILsMBkPDNdQ9HawkpZA1-_lKpe0oy4nKkuQAjqiZKosVIauMsQX0wT2u-BST5R8WqIVFIABVF82_fC8QvQnHiLAeEYXBun8K-Kb5aU0lV1Pe55xLf-5aIboTTbuOdwL--qsa7mSUJY8n4HRCA6RUDfY8_D7-EezmzohUfXQdo-WwNJZWR_rnHqo4468Adv4-6IQ58jaltDrpRtID9NygkiyslqGTlhl85jwQkhWX5d8DopULKCM3h"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-black/80 backdrop-blur-md text-on-surface px-3 py-1 font-label-mono text-[10px]">CULTURE</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-secondary transition-colors">URBAN REFRACTION</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">The aesthetic of invisibility: Translucent layers and the psychology of urban camouflage.</p>
+                    </div>
+                    <a class="flex items-center gap-2 font-label-mono text-label-mono text-secondary group-hover:gap-4 transition-all" href="#">
+                        READ MORE <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-panel group relative rounded-xl overflow-hidden flex flex-col h-[600px] border-white/5">
+                <div class="h-1/2 overflow-hidden relative">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A futuristic interface projected onto a model's sleeve." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW668Hamy2LpCezb3cUUIZpvXo_XhAPc9jhiy0FWiPZDYi9uv2YOqphd81evkcbz11Mk-Wn3UjgYUa-CqoD8fq1wGun_vGE7hV5P1GWIFZb2rriFLJ71wTvuMKLvlaqJX-M6o2lEFBYTNnNa-Dy2aUE8d3VfrAz93edU4zVSPlnK4coxrpAiyRFrQezCBYPAicPMnU6NHeVN5An95iOPcFYiq0tRakTnGVHgxUoyqU-LjxjS5T0DJ-"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-black/80 backdrop-blur-md text-on-surface px-3 py-1 font-label-mono text-[10px]">FUTURE</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-tertiary transition-colors">INTERFACE AS APPAREL</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Redefining the garment as a wearable computer and the ethical implications of data-tracking fabrics.</p>
+                    </div>
+                    <a class="flex items-center gap-2 font-label-mono text-label-mono text-tertiary group-hover:gap-4 transition-all" href="#">
+                        SYNC NOW <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Format Story -->
+    <section class="mb-32 relative">
+        <div class="absolute inset-0 z-0"></div>
+        <div class="relative z-10 px-margin-desktop py-24 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <div class="aspect-[4/5] w-full relative overflow-hidden rounded-2xl">
+                    <img class="w-full h-full object-cover" data-alt="A portrait of a model in a high-tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV6vhiKzkgWOkf0hTGUI3SGyIm4UuM5WDsNZP-RS8ldswk_k1u43lUarKaEmibAVpMxNkMJM6hniGY_oG7l4D3hymXlYwZnFaG-cMcpar7IaqHIadD0V5yCfTm-y6iSPEdxAQEOX9bQ-nBasqclUsjtaVfd9xm-DmkxaYSJZ-3cerJq7IBciYplmCbg-fDsZ1NJjF_03OF5rFow6jKiRt-lHC6yhvz62Zn2a1t0HjKgvrAagMSjJBJ"/>
+                    <div class="absolute inset-0 border-[24px] border-background/20 pointer-events-none"></div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <span class="font-label-mono text-label-mono text-primary mb-6 block">SPECIAL REPORT // FEATURED</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">THE ANONYMITY PROJECT</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 leading-relaxed">
+                    In an era of total surveillance, fashion becomes the ultimate tool for resistance. We sit down with the designers of the 'V-SHIELD' collection to discuss the technology behind infrared-deflecting textiles and facial-recognition jamming patterns.
+                </p>
+                <div class="grid grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <p class="font-headline-md text-headline-md text-primary mb-1">98%</p>
+                        <p class="font-label-mono text-[10px] text-on-surface-variant uppercase">Encryption Rate</p>
+                    </div>
+                    <div>
+                        <p class="font-headline-md text-headline-md text-secondary mb-1">0.4s</p>
+                        <p class="font-label-mono text-[10px] text-on-surface-variant uppercase">Signal Jamming Latency</p>
+                    </div>
+                </div>
+                <button class="bg-white text-background px-10 py-5 rounded-full font-bold hover:bg-primary transition-all active:scale-95">READ THE INVESTIGATION</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Footer CTA -->
+    <section class="px-margin-desktop mb-32">
+        <div class="glass-panel p-12 md:p-24 rounded-3xl text-center border-white/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">hub</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">JOIN THE NETWORK</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">Receive weekly deep-dives into technical fashion, digital art, and the future of urban survival.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto" onsubmit="event.preventDefault(); alert('Subscribed to the Grid.');">
+                <input class="flex-grow bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 font-label-mono text-on-surface px-6 py-4 uppercase" placeholder="YOUR_EMAIL@NETWORK.NET" type="email"/>
+                <button class="bg-primary px-8 py-4 text-on-primary font-bold rounded-full hover:bg-primary-container transition-all">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto border-t border-outline-variant/10 bg-surface-container-lowest text-on-surface-variant">
+    <div class="flex flex-col gap-2 items-center md:items-start">
+        <div class="text-body-lg font-headline-md font-bold text-on-surface">NEWW(AI)VE</div>
+        <p class="font-label-mono text-label-mono opacity-60">© 2026 NEWW(AI)VE DIGITAL COUTURE. ALL RIGHTS RESERVED.</p>
+    </div>
+    <div class="flex gap-stack-lg font-label-mono text-label-mono">
+        <a class="hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+        <a class="hover:text-primary transition-colors duration-200" href="#">Contact</a>
+    </div>
+</footer>
+
+<!-- Back to Portfolio Floating Button -->
+<a href="https://kokogeorge023.github.io/portfolio/" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-white/20 hover:border-primary hover:bg-white/5 hover:scale-105 active:scale-95 transition-all duration-300 text-on-surface hover:text-primary shadow-2xl group">
+    <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:-translate-x-1 font-bold">arrow_back</span>
+    <span class="font-label-mono text-xs uppercase tracking-wider">Back to Portfolio</span>
+</a>
+
+<script>
+    // Micro-interaction for glass cards
+    document.querySelectorAll('.glass-panel').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Simple scroll parallax effect for editorial images
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelectorAll('img[data-alt]').forEach(img => {
+            const speed = 0.05;
+            img.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // Mobile Menu Interaction
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    }
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        });
+    }
+</script>
+</body>
+</html>
