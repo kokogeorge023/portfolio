@@ -45,96 +45,104 @@
     </style>
     <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "surface-container-low": "#131b2e",
-                "background": "#0b1326",
-                "on-secondary-fixed-variant": "#8c0053",
-                "on-surface": "#dae2fd",
-                "secondary": "#ffb0cd",
-                "surface-container-lowest": "#060e20",
-                "primary-fixed": "#f0dbff",
-                "error": "#ffb4ab",
-                "on-primary": "#490080",
-                "tertiary-fixed": "#acedff",
-                "outline-variant": "#4d4354",
-                "surface-container-high": "#222a3d",
-                "inverse-on-surface": "#283044",
-                "on-secondary-container": "#ffbad3",
-                "on-primary-container": "#400071",
-                "on-background": "#dae2fd",
-                "surface-tint": "#ddb7ff",
-                "tertiary-fixed-dim": "#4cd7f6",
-                "surface-bright": "#31394d",
-                "on-primary-fixed": "#2c0051",
-                "on-secondary": "#640039",
-                "on-tertiary-fixed-variant": "#004e5c",
-                "outline": "#988d9f",
-                "on-secondary-fixed": "#3e0022",
-                "surface-variant": "#2d3449",
-                "surface-container-high": "#222a3d",
-                "surface-container-lowest": "#060e20",
-                "on-error-container": "#ffdad6",
-                "primary": "#ddb7ff",
-                "on-surface-variant": "#cfc2d6",
-                "secondary-container": "#aa0266",
-                "on-primary-container": "#400071",
-                "primary-container": "#b76dff",
-                "inverse-surface": "#dae2fd",
-                "outline-variant": "#4d4354",
-                "error": "#ffb4ab",
-                "surface-container-highest": "#2d3449",
-                "secondary": "#ffb0cd",
-                "surface": "#0b1326",
-                "on-tertiary-fixed": "#001f26",
-                "on-tertiary-fixed-variant": "#004e5c"
-              },
-              "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-              },
-              "spacing": {
-                "margin-mobile": "20px",
-                "margin-desktop": "64px",
-                "container-max": "1440px"
-              },
-              "fontFamily": {
-                "display-outline": ["Sora"],
-                "label-mono": ["Space Mono"],
-                "headline-lg-mobile": ["Sora"],
-                "body-lg": ["Inter"],
-                "body-md": ["Inter"],
-                "headline-lg": ["Sora"],
-                "headline-md": ["Sora"]
-              },
-              "fontSize": {
-                "display-outline": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
-                "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
-                "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#131b2e",
+                        "background": "#0b1326",
+                        "on-secondary-fixed-variant": "#8c0053",
+                        "on-surface": "#dae2fd",
+                        "secondary": "#ffb0cd",
+                        "surface-container-lowest": "#060e20",
+                        "primary-fixed": "#f0dbff",
+                        "error": "#ffb4ab",
+                        "on-primary": "#490080",
+                        "tertiary-fixed": "#acedff",
+                        "outline-variant": "#4d4354",
+                        "surface-container-high": "#222a3d",
+                        "on-secondary-container": "#ffbad3",
+                        "on-primary-container": "#400071",
+                        "on-background": "#dae2fd",
+                        "surface-tint": "#ddb7ff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "surface-bright": "#31394d",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary": "#640039",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "outline": "#988d9f",
+                        "secondary-container": "#aa0266",
+                        "primary": "#ddb7ff",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cfc2d6",
+                        "surface-container": "#171f33",
+                        "primary-container": "#b76dff",
+                        "surface-dim": "#0b1326",
+                        "secondary-fixed": "#ffd9e4",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#3e0022",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "tertiary-container": "#009eb9",
+                        "inverse-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#ffb0cd",
+                        "tertiary": "#4cd7f6",
+                        "on-tertiary-container": "#002f38",
+                        "inverse-primary": "#842bd2",
+                        "on-tertiary-fixed": "#001f26",
+                        "surface-container-highest": "#2d3449",
+                        "on-tertiary": "#003640",
+                        "surface-variant": "#2d3449",
+                        "surface": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Sora"],
+                        "headline-lg-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "display-outline": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-outline": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.05em", "fontWeight": "800" }]
+                    }
+                }
             }
-          }
         }
     </script>
 </head>
 <body class="bg-background selection:bg-primary selection:text-on-primary">
 <!-- Navigation Shell -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
     <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW(AI)VE</a>
     <nav class="hidden md:flex items-center gap-10">
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="collections.html">Collections</a>
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="tech.html">Tech</a>
         <a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300 font-label-mono text-label-mono" href="editorial.html">Editorial</a>
     </nav>
-    <div class="flex items-center gap-stack-md">
+    <div class="flex items-center gap-4">
         <button id="menu-btn" class="p-2 hover:bg-white/10 rounded-full transition-colors active:scale-95">
             <span class="material-symbols-outlined text-on-surface text-4xl">menu</span>
         </button>
