@@ -15,11 +15,11 @@
             overflow-x: hidden;
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-image: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent) 1;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         .neon-glow-purple {
             box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
@@ -133,14 +133,14 @@
 </head>
 <body class="bg-background text-on-surface">
 <!-- TOP NAVIGATION SHELL -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-8 max-w-container-max mx-auto bg-transparent">
     <a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface" href="index.html">NEWW(AI)VE</a>
     <div class="hidden md:flex items-center gap-stack-lg">
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="index.html">Collections</a>
-        <a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform" href="tech.html">Tech</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="editorial.html">Editorial</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="collections.html">Collections</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform font-label-mono text-label-mono" href="tech.html">Tech</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-mono text-label-mono" href="editorial.html">Editorial</a>
     </div>
-    <button id="menu-btn" class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">menu</button>
+    <button id="menu-btn" class="material-symbols-outlined text-on-surface hover:text-primary transition-colors text-4xl">menu</button>
 </nav>
 
 <!-- Mobile Menu Overlay -->
@@ -148,21 +148,21 @@
     <button id="close-menu" class="absolute top-8 right-8 text-on-surface hover:text-primary transition-colors">
         <span class="material-symbols-outlined text-3xl">close</span>
     </button>
-    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="index.html">Collections</a>
+    <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="collections.html">Collections</a>
     <a class="text-2xl font-bold tracking-widest font-label-mono text-primary border-b border-primary/30 pb-2" href="tech.html">Tech</a>
     <a class="text-2xl font-bold tracking-widest font-label-mono text-on-surface-variant hover:text-primary transition-colors" href="editorial.html">Editorial</a>
 </div>
 
 <!-- HERO SECTION / INTRO -->
-<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<main class="pt-40 pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
         <div class="md:col-span-7">
-            <span class="font-label-mono text-label-mono text-primary uppercase mb-stack-sm block">Laboratory Protocol v4.2</span>
-            <h1 class="font-headline-lg text-headline-lg md:text-[80px] leading-tight mb-stack-md">CORE<br/><span class="text-primary">ARCHITECTURE</span></h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Exploring the intersection of biological adaptation and synthetic performance. Our latest technical release focuses on thermal kinetic regulation and structural cybernetic weaves.</p>
+            <span class="font-label-mono text-label-mono text-primary uppercase mb-stack-sm block text-xs md:text-sm">Laboratory Protocol v4.2</span>
+            <h1 class="font-headline-lg text-3xl md:text-[80px] leading-tight mb-stack-md uppercase font-bold">CORE<br/><span class="text-primary">ARCHITECTURE</span></h1>
+            <p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl">Exploring the intersection of biological adaptation and synthetic performance. Our latest technical release focuses on thermal kinetic regulation and structural cybernetic weaves.</p>
         </div>
-        <div class="md:col-span-5 relative">
-            <div class="w-full h-[400px] rounded-xl overflow-hidden glass-panel relative group">
+        <div class="md:col-span-5 relative mt-10 md:mt-0">
+            <div class="w-full h-[400px] rounded-xl overflow-hidden glass-panel relative group border border-white/5">
                 <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A close-up shot of a high-tech iridescent fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa94GiDLiNjcbpsJEeBU9pIZVMcfOEgiD3dOrnpm0kBAQsnrQ6-vrup-_zMTJdT0UxeT_tC-5IcaHsoq3gWRu6kVMp8VzvN4-I05aROtFjMz3fZb452OUmAhEghHMqWwu7pmd0fOZ-1xINs0GJCgFIO210i2_o9ImUAEY7Rhf8PDMmBEo1fQxR77R0q5Qio8QvZo9WdZc1tZCz93dhE1EBqIsv9bvUfha0wT2nIccn-kCWRPxgXICG"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 <div class="absolute bottom-6 left-6">
@@ -173,7 +173,7 @@
             <div class="absolute -top-4 -right-4 glass-panel p-4 rounded-lg neon-glow-purple hidden md:block">
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span class="font-label-mono text-label-mono">KINETIC STATUS: OPTIMAL</span>
+                    <span class="font-label-mono text-label-mono text-xs">KINETIC STATUS: OPTIMAL</span>
                 </div>
             </div>
         </div>
@@ -182,15 +182,15 @@
 
 <!-- TECH SECTION 01: HEAT-REGULATING TECHNOLOGY -->
 <section class="py-24 bg-surface-container-lowest">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-            <div class="md:col-span-5 order-2 md:order-1">
-                <div class="glass-panel p-stack-lg rounded-xl flex flex-col gap-stack-lg h-full justify-center">
+            <div class="md:col-span-5 order-2 md:order-1 mt-10 md:mt-0">
+                <div class="glass-panel p-8 md:p-stack-lg rounded-xl flex flex-col gap-stack-lg h-full justify-center border border-white/5">
                     <div class="flex items-center gap-stack-md">
                         <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">thermostat</span>
-                        <h2 class="font-headline-md text-headline-md">Heat-Regulating Technology</h2>
+                        <h2 class="font-headline-md text-2xl md:text-headline-md font-bold">Heat-Regulating Technology</h2>
                     </div>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
+                    <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed">
                         Powered by PHASE-SHIFT micro-capsules embedded directly into the polymer core, our garments react instantly to external temperature shifts. Energy is absorbed when the body overheats and released during cooling phases, maintaining a constant 31°C microclimate.
                     </p>
                     <!-- Data Viz -->
@@ -210,22 +210,22 @@
                             <div class="h-full bg-secondary" style="width: 98.2%"></div>
                         </div>
                     </div>
-                    <button class="pill-gradient px-8 py-3 rounded-full text-white font-bold w-fit mt-4 flex items-center gap-2 group hover:scale-105 transition-transform">
+                    <button class="pill-gradient px-8 py-3 rounded-full text-white font-bold w-fit mt-4 flex items-center gap-2 group hover:scale-105 transition-transform text-sm shadow-md">
                         VIEW LAB DATA
                         <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
                 </div>
             </div>
-            <div class="md:col-span-7 order-1 md:order-2 h-[500px] relative">
-                <img class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3N-4tqbOBlyaw9AhXPOjSDZwYERDUTEzHt6E16B2iqD0FI__3LtGNmgWVrG1RoGjSkSuq8PqKY1wwV33UInvVwPmcCsM_mbkhx12SaXqVKrLDXhZWnCf3Yf9bMUJkYeFI3yyon40yMNcnpSVJcNSUVP84x6aiDddyUR2w0wX8Pmc6HA4jbgX63NsTJ3XjCqIEMRuOndB8ILlqBENX1aUzB2ipkQeIU6VCmQOcMyAbvDXLGUtXq_a" alt="Heat-regulating technology fabric scan"/>
+            <div class="md:col-span-7 order-1 md:order-2 h-[350px] md:h-[500px] relative">
+                <img class="w-full h-full object-cover rounded-xl border border-white/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3N-4tqbOBlyaw9AhXPOjSDZwYERDUTEzHt6E16B2iqD0FI__3LtGNmgWVrG1RoGjSkSuq8PqKY1wwV33UInvVwPmcCsM_mbkhx12SaXqVKrLDXhZWnCf3Yf9bMUJkYeFI3yyon40yMNcnpSVJcNSUVP84x6aiDddyUR2w0wX8Pmc6HA4jbgX63NsTJ3XjCqIEMRuOndB8ILlqBENX1aUzB2ipkQeIU6VCmQOcMyAbvDXLGUtXq_a" alt="Heat-regulating technology fabric scan"/>
                 <div class="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent"></div>
                 <!-- Legend -->
                 <div class="absolute bottom-8 right-8 flex flex-col gap-2">
-                    <div class="flex items-center gap-3 glass-panel px-4 py-2 rounded-full">
+                    <div class="flex items-center gap-3 glass-panel px-4 py-2 rounded-full border border-white/10">
                         <div class="w-3 h-3 rounded-full bg-primary"></div>
                         <span class="font-label-mono text-[10px]">HEAT ABSORPTION</span>
                     </div>
-                    <div class="flex items-center gap-3 glass-panel px-4 py-2 rounded-full">
+                    <div class="flex items-center gap-3 glass-panel px-4 py-2 rounded-full border border-white/10">
                         <div class="w-3 h-3 rounded-full bg-secondary"></div>
                         <span class="font-label-mono text-[10px]">KINETIC DISCHARGE</span>
                     </div>
@@ -236,47 +236,47 @@
 </section>
 
 <!-- TECH SECTION 02: CYBERNETIC FABRICS (Bento Style) -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="mb-stack-lg flex flex-col md:flex-row justify-between items-end gap-stack-md">
+<section class="py-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="mb-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-md">
         <div>
-            <h2 class="font-headline-lg text-headline-lg">Cybernetic Fabrics</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our signature weave incorporates nano-electronic pathways that bridge the gap between textile and circuitry.</p>
+            <h2 class="font-headline-lg text-3xl md:text-headline-lg font-bold uppercase">Cybernetic Fabrics</h2>
+            <p class="font-body-md text-sm md:text-body-md text-on-surface-variant max-w-md mt-2">Our signature weave incorporates nano-electronic pathways that bridge the gap between textile and circuitry.</p>
         </div>
-        <div class="font-label-mono text-label-mono text-primary border-l-2 border-primary pl-4">
+        <div class="font-label-mono text-xs text-primary border-l-2 border-primary pl-4 tracking-widest">
             PROTOCOL SERIES: NEON-MIND
         </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <!-- Large Focus Card -->
-        <div class="md:col-span-2 md:row-span-2 glass-panel rounded-xl overflow-hidden relative group">
+        <div class="md:col-span-2 md:row-span-2 glass-panel rounded-xl overflow-hidden relative group border border-white/5 h-[350px] md:h-auto">
             <img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000" data-alt="Macrophotography of a complex cybernetic textile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EFzvw5Eh__VKYoY42Z6KjtKgy85jP8gGayKxR4QRTB9wCJoRo2q_i9Y6e99T6plc7nrvPN5Bg4Q39DFYM9WeUrM2VZuMRmkW9ZlDYgbkJT0pxgHT8j5CLam0qu4uFADE5xlu7F2ceYaAAV8OHdNUbxBczS957fsDdOpC7ijrseFn3W4qATWxykGFGhNF5BLx3QjD4Rz6vrJrmVJKRWwerithxMxKMnWzo9rMaMFKjW4gwNwwmj7V"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-background p-stack-lg flex flex-col justify-end">
-                <h3 class="font-headline-md text-headline-md mb-2">NEO-STRETCH™ C01</h3>
-                <p class="font-body-md text-on-surface-variant">The base substrate of all NEWW(AI)VE technical shells. 400% elongation with zero tensile loss.</p>
+            <div class="absolute inset-0 bg-gradient-to-t from-background p-6 md:p-stack-lg flex flex-col justify-end">
+                <h3 class="font-headline-md text-xl md:text-headline-md font-bold mb-2">NEO-STRETCH™ C01</h3>
+                <p class="font-body-md text-xs md:text-sm text-on-surface-variant">The base substrate of all NEWW(AI)VE technical shells. 400% elongation with zero tensile loss.</p>
             </div>
         </div>
         <!-- Detail Card 1 -->
-        <div class="glass-panel p-stack-md rounded-xl flex flex-col justify-between hover:bg-white/10 transition-colors cursor-crosshair">
-            <span class="material-symbols-outlined text-secondary">memory</span>
+        <div class="glass-panel p-6 rounded-xl flex flex-col justify-between hover:bg-white/10 transition-colors cursor-crosshair border border-white/5 h-[200px] md:h-auto">
+            <span class="material-symbols-outlined text-secondary text-3xl">memory</span>
             <div>
-                <h4 class="font-label-mono text-primary mb-2">CONDUCTIVE CORE</h4>
-                <p class="text-sm text-on-surface-variant">Integrated silver filaments for low-latency signal transmission.</p>
+                <h4 class="font-label-mono text-xs text-primary mb-2 tracking-wider">CONDUCTIVE CORE</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Integrated silver filaments for low-latency signal transmission.</p>
             </div>
         </div>
         <!-- Detail Card 2 -->
-        <div class="glass-panel p-stack-md rounded-xl flex flex-col justify-between hover:bg-white/10 transition-colors cursor-crosshair">
-            <span class="material-symbols-outlined text-secondary">shield</span>
+        <div class="glass-panel p-6 rounded-xl flex flex-col justify-between hover:bg-white/10 transition-colors cursor-crosshair border border-white/5 h-[200px] md:h-auto">
+            <span class="material-symbols-outlined text-secondary text-3xl">shield</span>
             <div>
-                <h4 class="font-label-mono text-primary mb-2">NANO-SHIELD</h4>
-                <p class="text-sm text-on-surface-variant">Atomic-level water repellency without sacrificing breathability.</p>
+                <h4 class="font-label-mono text-xs text-primary mb-2 tracking-wider">NANO-SHIELD</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Atomic-level water repellency without sacrificing breathability.</p>
             </div>
         </div>
         <!-- Image Card Small -->
-        <div class="md:col-span-2 h-64 glass-panel rounded-xl overflow-hidden relative">
+        <div class="md:col-span-2 h-64 glass-panel rounded-xl overflow-hidden relative border border-white/5">
             <img class="w-full h-full object-cover opacity-50" data-alt="A futuristic laboratory testing rig for fabrics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZQm5q-c3VjCAMz5cjnaEZihgJgPYPEjPcpBiEE71f-1mWagI3txh7mmAC3_vbuYPbMROEZgNvEFHMYQfygyrbw3EE4V3_FsI5Qp5CeK29N30eVks959zAHdWtB8zx4nTvfihFqcFmcX808N64l0j6Pftq_LmDT8hocxudJl8NlqFJq89IHs9SH69rRmZf_XqjiMWOqlLiGeF1KOJekuJfll7v-d_GMg-erwpvPyuFauzI7e4-wnMU"/>
             <div class="absolute top-4 left-4 bg-primary text-on-primary font-label-mono px-2 py-1 text-[10px] rounded">STRESS TEST 08</div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <button class="w-16 h-16 rounded-full glass-panel flex items-center justify-center neon-glow-purple hover:scale-110 transition-transform">
+                <button class="w-16 h-16 rounded-full glass-panel flex items-center justify-center neon-glow-purple hover:scale-110 transition-transform border border-white/10">
                     <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
                 </button>
             </div>
@@ -285,44 +285,44 @@
 </section>
 
 <!-- DATA VISUALIZATION SECTION -->
-<section class="py-24 bg-surface-container-low border-y border-outline-variant/10">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-        <h2 class="font-headline-lg text-headline-lg mb-stack-lg">SYSTEM METRICS</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<section class="py-24 bg-surface-container-low border-y border-white/5">
+    <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop text-center">
+        <h2 class="font-headline-lg text-3xl md:text-headline-lg font-bold uppercase mb-stack-lg">SYSTEM METRICS</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="flex flex-col items-center">
-                <div class="text-display-outline font-display-outline text-[60px] text-primary mb-2">31°C</div>
-                <span class="font-label-mono text-on-surface-variant">OPTIMAL THERMAL</span>
+                <div class="font-display-outline text-[40px] md:text-[60px] text-primary mb-2 font-extrabold text-glow-primary">31°C</div>
+                <span class="font-label-mono text-[10px] md:text-xs text-on-surface-variant tracking-widest">OPTIMAL THERMAL</span>
             </div>
             <div class="flex flex-col items-center">
-                <div class="text-display-outline font-display-outline text-[60px] text-secondary mb-2">0.2s</div>
-                <span class="font-label-mono text-on-surface-variant">KINETIC RESET</span>
+                <div class="font-display-outline text-[40px] md:text-[60px] text-secondary mb-2 font-extrabold">0.2s</div>
+                <span class="font-label-mono text-[10px] md:text-xs text-on-surface-variant tracking-widest">KINETIC RESET</span>
             </div>
             <div class="flex flex-col items-center">
-                <div class="text-display-outline font-display-outline text-[60px] text-tertiary mb-2">99%</div>
-                <span class="font-label-mono text-on-surface-variant">UV REFRACTION</span>
+                <div class="font-display-outline text-[40px] md:text-[60px] text-tertiary mb-2 font-extrabold">99%</div>
+                <span class="font-label-mono text-[10px] md:text-xs text-on-surface-variant tracking-widest">UV REFRACTION</span>
             </div>
             <div class="flex flex-col items-center">
-                <div class="text-display-outline font-display-outline text-[60px] text-primary mb-2">0.5kg</div>
-                <span class="font-label-mono text-on-surface-variant">MAX NET WEIGHT</span>
+                <div class="font-display-outline text-[40px] md:text-[60px] text-primary mb-2 font-extrabold text-glow-primary">0.5kg</div>
+                <span class="font-label-mono text-[10px] md:text-xs text-on-surface-variant tracking-widest">MAX NET WEIGHT</span>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA / FINAL IMAGE -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="relative h-[600px] rounded-xl overflow-hidden flex items-center justify-center text-center px-6">
+<section class="py-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="relative h-[450px] md:h-[600px] rounded-xl overflow-hidden flex items-center justify-center text-center px-6 border border-white/5">
         <img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide shot of a futuristic human figure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4mqaLTEXzdg9iyQlFtJ6apdIrHFsIovPo0K-ifUhANbizckdt6NoSWiHsNYo4LZQ1zVZp_9qOA2KsO5Qc6BEIO6I3ImG5wsLSLoIj51r8R_SVileYJiLkTn4A4UktOvfOCe15f1z3inDc8V_4Dj59VXT7g3QWXLwaAAZz5ue6ysazLiqcW_2DPr2jPRIfz09gpQMQ6N5vW9wLN5G561L36j1fpAFidIuY1iAD5hrqX7MhqQP1aN2i"/>
         <div class="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
-        <div class="relative z-10 max-w-2xl">
-            <h2 class="font-headline-lg text-headline-lg mb-stack-md">READY FOR THE NEXT EVOLUTION?</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">Explore our full line of technical shells and cybernetic essentials in the NEWW(AI)VE digital catalog.</p>
-            <div class="flex flex-col md:flex-row gap-stack-md justify-center">
-                <a href="index.html" class="pill-gradient px-12 py-4 rounded-full text-white font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3">
+        <div class="relative z-10 max-w-2xl flex flex-col items-center">
+            <h2 class="font-headline-lg text-2xl md:text-headline-lg font-bold uppercase mb-stack-md leading-tight">READY FOR THE NEXT EVOLUTION?</h2>
+            <p class="font-body-lg text-sm md:text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">Explore our full line of technical shells and cybernetic essentials in the NEWW(AI)VE digital catalog.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+                <a href="collections.html" class="pill-gradient px-8 md:px-12 py-4 rounded-full text-white font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 text-sm shadow-md">
                     EXPLORE COLLECTIONS
                     <span class="material-symbols-outlined">shopping_cart</span>
                 </a>
-                <button class="glass-panel px-12 py-4 rounded-full text-white font-bold hover:bg-white/10 transition-colors border border-white/20">
+                <button class="glass-panel px-8 md:px-12 py-4 rounded-full text-white font-bold hover:bg-white/10 transition-colors border border-white/10 text-sm">
                     LAB REPORTS
                 </button>
             </div>
@@ -331,12 +331,12 @@
 </section>
 
 <!-- FOOTER SHELL -->
-<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto bg-surface-container-lowest border-t border-outline-variant/10 mt-24">
+<footer class="w-full py-12 px-6 md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6 max-w-container-max mx-auto bg-surface-container-lowest border-t border-white/5 text-on-surface-variant">
     <div class="flex flex-col items-center md:items-start gap-2">
-        <div class="text-body-lg font-headline-md font-bold text-on-surface">NEWW(AI)VE</div>
-        <p class="text-label-mono font-label-mono text-on-surface-variant text-[10px]">© 2026 NEWW(AI)VE DIGITAL COUTURE. ALL RIGHTS RESERVED.</p>
+        <div class="text-body-lg font-headline-md font-bold text-on-surface tracking-wider">NEWW(AI)VE</div>
+        <p class="text-label-mono font-label-mono text-on-surface-variant text-[10px] tracking-wide">© 2026 NEWW(AI)VE DIGITAL COUTURE. ALL RIGHTS RESERVED.</p>
     </div>
-    <div class="flex gap-stack-lg font-label-mono text-label-mono">
+    <div class="flex gap-stack-lg font-label-mono text-label-mono text-[10px] tracking-widest uppercase">
         <a class="hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
         <a class="hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
         <a class="hover:text-primary transition-colors duration-200" href="#">Contact</a>
@@ -350,14 +350,32 @@
 </a>
 
 <script>
-    // Minimal interaction logic for data viz
-    window.addEventListener('scroll', () => {
-        const panels = document.querySelectorAll('.glass-panel');
-        panels.forEach(panel => {
+    // High-end 3D Parallax Tilt Effect for Glass Panels
+    const panels = document.querySelectorAll('.glass-panel');
+    panels.forEach(panel => {
+        panel.style.transition = 'transform 0.15s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease';
+        panel.style.transformStyle = 'preserve-3d';
+        
+        panel.addEventListener('mousemove', (e) => {
             const rect = panel.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                panel.style.transform = `translateY(${(rect.top - window.innerHeight/2) * 0.05}px)`;
-            }
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = -(y - centerY) / (rect.height / 12);
+            const rotateY = (x - centerX) / (rect.width / 12);
+            
+            panel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            panel.style.borderColor = 'rgba(183, 109, 255, 0.3)';
+            panel.style.boxShadow = '0 15px 45px rgba(183, 109, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.37)';
+        });
+        
+        panel.addEventListener('mouseleave', () => {
+            panel.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            panel.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+            panel.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.37)';
         });
     });
 
